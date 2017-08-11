@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+		<div> this is a box </div>
+
+		<script>
+			var breed = "dog"
+			// xhr.setRequestHeader( 'Api-User-Agent', 'Example/1.0' );
+			var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + breed + "&format=json&callback=?"
+
+
+			$.ajax({
+				url: queryURL,
+				method: "GET",
+				// headers: { 'Api-User-Agent': 'Example/1.0', "Access-Control-Allow-Origin": true },
+				dataType: "json",
+			})
+
+		.done(function(response){
+
+			console.log(response)
+			console.log(response.contentmodel)
+			
+		})
+			
+
+
+		</script>
+
+</body>
+</html>
